@@ -1,0 +1,49 @@
+<style>
+.contact {
+/* 	width:90%; */
+	margin-top: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #666;
+}
+.contact .form {
+	font-size: 95%;
+}
+.contact .form .redstar {
+	color: red;
+	font-size: 118%;
+}
+.contact .form .short_input {
+	width: {{ CIW }};
+}
+.contact .form .long_input {
+	width: {{ LIW }};
+}
+</style>
+
+<div class="contact">
+	<div class="form">
+		<span class="redstar">{{ERROR_MESSAGE}}</span>
+		<form name="contact-form" action="/contactpost/" method="post">
+			{% for field in FIELDS %}
+				{% if field.type = 'short input' %}
+					<p>{{ field.title }}: {% if field.is_required %}<span class="redstar">* {{ field.error }}{% endif %}</span><br><input type="text"
+						class="short_input" name="{{ field.name }}" value="{{ field.value }}"/></p>
+				{% elif field.type = 'long input' %}
+					<p>{{ field.title }}: {% if field.is_required %}<span class="redstar">* {{ field.error }}{% endif %}</span><br><input type="text"
+						class="long_input" name="{{ field.name }}" value="{{ field.value }}"/></p>
+				{% elif field.type = 'text box' %}
+					<p>{{ field.title }}: {% if field.is_required %}<span class="redstar">* {{ field.error }}{% endif %}</span><br><textarea name="{{ field.name }}"
+						rows="{{ TB_ROWS }}" cols="{{ TB_COLS }}">{{ field.value }}</textarea></p>
+				{% endif %}
+			{% endfor %}
+			<input type="submit" value="Send"/> <input type="reset" value="Reset">
+			<input type="hidden" value="{{ CUW_ID }}" name="_cu_widget_id_">
+		</form>
+		<br>		
+	</div>
+</div>
+
+
+
+

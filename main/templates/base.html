@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>Ideal Technical Solutions</title>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/layout.css">
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
+</head>
+
+
+<body> 
+	
+<div class="page">
+
+	<!-- #=============================================================================== -->
+	<!-- # Header -->
+	<!-- #=============================================================================== -->
+
+	<div class="header">
+		{{ LOGO|safe }}
+		{{ SUB_HEADER|safe }}
+	</div>
+
+	<div class="auth">
+		{% if USER_NAME = '' %}
+			<a href="/login/">login</a>
+		{% else %}
+			Logged in as : <strong>{{ USER_NAME }}</strong> &nbsp;/&nbsp; <a href="/logout/">logout</a>
+		{% endif %}
+		<br>
+	</div>
+	
+	<div class="topmenu">
+		<!-- #=============================================================================== -->
+		<!-- # Top Menu -->
+		<!-- #=============================================================================== -->
+		<div class="topmenuitems">
+			<ul>
+				{% for item in TOPMENU_ITEMS %}
+					{% if item.page.slug = SLUG %}
+						<li><a style="color:#4678B7;" href="/{{ item.page.slug }}/" class="menuL">{{ item.page.title }}</a></li>
+					{% else %}
+						<li><a href="/{{ item.page.slug }}/" class="menuL">{{ item.page.title }}</a></li>
+					{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="topmenuremainder"><p>&nbsp;</p></div>
+		<div class="separator"></div>
+	</div>
+	
+	<div class="content">
+		<!-- #=============================================================================== -->
+		<!-- # Content -->
+		<!-- #=============================================================================== -->
+		{{ CONTENT_TEMPLATE|safe }}
+	</div>
+	
+	<div class="footer">
+		<!-- #=============================================================================== -->
+		<!-- # Footer -->
+		<!-- #=============================================================================== -->
+		<div style="font-size: 11px; line-height: 16px;">
+			{% for item in FTRMENU_ITEMS %}
+				<a href="/{{ item.page.slug }}/">{{ item.page.title }}</a>{% if not forloop.last %}&nbsp;&nbsp;I&nbsp;{% endif %}
+			{% endfor %}
+			<br>
+			{{ FOOTER|safe }}
+		</div>
+	</div>	
+</div>
+</body>
+
+</html>

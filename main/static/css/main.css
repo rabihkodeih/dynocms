@@ -1,0 +1,137 @@
+body {
+/* 	background:url(../images/body-bg.jpg); */
+	background: white;
+	margin: 0px;
+	color: #184545;
+	font-size: 12px;
+	font-family: arial;
+}
+
+.page {
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header {
+	padding-top: 10px;	
+}
+
+.subheader {
+	margin:0;
+	margin-top: 0px;
+	color: #092146;
+	font-size: 140%;
+	font-variant: small-caps;
+}
+
+
+.topmenu {
+	/* border-top: 1px rgba(37,88,150,0.5) solid; */
+	/* border-bottom: 1px rgba(37,88,150,0.5) solid; */
+}
+.topmenu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.topmenu li {
+	float: left;
+}
+.topmenu a:hover {
+	background: #ddd;
+}
+.topmenu a {
+	display: block;
+	background: #C6D9F1;
+	margin-right: 1px;
+	text-decoration: none;
+	color: #184545;
+	padding-right: 8px;
+	padding-left: 8px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	/*font-variant: small-caps;*/
+	font-weight: bold;
+	font-size: 100%;
+}
+.topmenuitems {
+	float: left;
+	background: white;
+}
+.topmenuremainder {
+	background: #C6D9F1;
+}
+.topmenuremainder p {
+	display: block;
+	padding: 8px;
+	margin: 0;
+}
+
+
+.content {
+}
+.coloredtext {
+	color: #4678B7;
+}
+.paragraph {
+	margin: 0;
+	padding: 25px;
+}
+.paragraph h1 {
+	margin: 0;
+	padding: 0;
+	padding-top: 8px;
+	font-size: 12px;
+	font-family: Verdana;
+	font-weight: normal;
+}
+.paragraph p {
+	margin: 0;
+	padding: 0;
+	padding-top: 12px;
+	padding-bottom: 0px;
+	text-align: justify;
+}
+.paragraph p.morelink {
+	text-align: right;
+	padding: 0;
+	margin-bottom: -10px;
+}
+.paragraph a {
+	text-decoration: none;
+	color: #4678B7;
+	font-style: italic;
+}
+.paragraph a:hover {
+	color: #00A3FF;
+}
+.alittletotheright {
+	padding-left: 15px;
+}
+
+
+.footer {
+	border-top: 1px rgba(37, 88, 150, 0.5) solid;
+	padding-top: 10px;
+	padding-bottom: 15px;
+}
+.footer a {
+	text-decoration: none;
+	color: #999999;
+}
+.footer a:hover {
+	color: #F47920;
+}
+
+.auth {
+	font-size: 80%;
+	text-align: right;
+}
+.auth a {
+	text-decoration: none;
+	color: #999999;
+}
+.auth a:hover {
+	color: #F47920;
+}
