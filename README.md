@@ -12,3 +12,9 @@ Pages also have viewing permissions which can be edited with the page edit form.
 DynoCMS also allows the user to enter a number of global site parameters such as site logo, HTML theme and css tamplates. There comes bundeled an example site complete with logo image and themes that are installed upon issuing a "syncdb" command.
 
 The user can also edit the header, footer and page layouts. A handy macro facility is also provided with the system. Last but not least users can upload images to be used within html widgets.
+
+##Installation
+Clone repository then issue a `python manage.py syncdb` command.
+
+##Dependencies
+None
